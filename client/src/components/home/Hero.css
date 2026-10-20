@@ -1,0 +1,1388 @@
+/* =========================================================
+   TOYLAND
+   CINEMATIC DOLLHOUSE HERO
+========================================================= */
+
+.toyland-hero {
+  position: relative;
+
+  min-height: 650px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: #F8EDE4;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.hero-bg-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(15px);
+
+  z-index: -3;
+}
+
+.hero-bg-glow-one {
+  width: 650px;
+  height: 650px;
+
+  right: -160px;
+  top: -240px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 240, 230, 0.5) 45%,
+      transparent 72%
+    );
+
+  animation:
+    backgroundGlowOne 9s ease-in-out infinite;
+}
+
+.hero-bg-glow-two {
+  width: 550px;
+  height: 550px;
+
+  left: -250px;
+  bottom: -260px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 220, 218, 0.4),
+      transparent 70%
+    );
+
+  animation:
+    backgroundGlowTwo 11s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LIGHT ORB
+========================================================= */
+
+.hero-light-orb {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: 27%;
+  top: 17%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 251, 239, 0.75),
+      transparent 70%
+    );
+
+  filter: blur(8px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation:
+    orbFloat 8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.hero-container {
+  position: relative;
+
+  width: min(1500px, 100%);
+
+  min-height: 650px;
+
+  margin: 0 auto;
+
+  padding:
+    45px 55px 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    43% 57%;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.hero-copy {
+  position: relative;
+
+  z-index: 30;
+
+  padding-left: 10px;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.hero-badge {
+  width: fit-content;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    11px 18px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  color: #E8755E;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  box-shadow:
+    0 10px 30px
+    rgba(76, 52, 64, 0.06);
+
+  backdrop-filter:
+    blur(12px);
+
+  animation:
+    badgeFloat 4s ease-in-out infinite;
+}
+
+.hero-badge svg {
+  color: #D6A34A;
+
+  animation:
+    badgeSparkle 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.hero-copy h1 {
+  margin:
+    28px 0 0;
+
+  color: #3F2B52;
+
+  font-size:
+    clamp(52px, 5.2vw, 78px);
+
+  line-height: 0.96;
+
+  letter-spacing: -4px;
+
+  font-weight: 850;
+}
+
+.hero-copy h1 span {
+  color: #452F59;
+}
+
+.hero-copy h1 strong {
+  color: #ED705B;
+
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-copy > p {
+  max-width: 510px;
+
+  margin:
+    26px 0 0;
+
+  color: #8E7F91;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  font-weight: 450;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+.hero-primary-btn,
+.hero-secondary-btn {
+  min-height: 54px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding:
+    0 25px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 750;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.hero-primary-btn {
+  color: #FFFFFF;
+
+  background:
+    linear-gradient(
+      135deg,
+      #FF8067,
+      #ED6958
+    );
+
+  box-shadow:
+    0 13px 28px
+    rgba(255, 108, 86, 0.22);
+}
+
+.hero-primary-btn:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 18px 34px
+    rgba(255, 108, 86, 0.3);
+}
+
+.hero-primary-btn svg {
+  transition:
+    transform 0.25s ease;
+}
+
+.hero-primary-btn:hover svg {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.hero-secondary-btn {
+  color: #493655;
+
+  border:
+    2px solid
+    rgba(232, 220, 225, 0.9);
+
+  background:
+    rgba(255, 255, 255, 0.5);
+}
+
+.hero-secondary-btn:hover {
+  transform:
+    translateY(-4px);
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 12px 28px
+    rgba(70, 45, 65, 0.07);
+}
+
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.hero-trust {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 35px;
+}
+
+.trust-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.trust-icon {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  color: #D6A04A;
+
+  box-shadow:
+    0 7px 20px
+    rgba(70, 45, 60, 0.06);
+}
+
+.trust-item div {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.trust-item strong {
+  color: #4F3A59;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.trust-item small {
+  margin-top: 2px;
+
+  color: #A3939F;
+
+  font-size: 10px;
+}
+
+.trust-line {
+  width: 1px;
+
+  height: 35px;
+
+  margin:
+    0 22px;
+
+  background:
+    #E8DADC;
+}
+
+
+/* =========================================================
+   DOLLHOUSE VISUAL AREA
+========================================================= */
+
+.hero-visual {
+  position: relative;
+
+  height: 590px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    #F8EDE4;
+}
+
+
+/* =========================================================
+   DOLLHOUSE GLOW
+========================================================= */
+
+.dollhouse-glow {
+  position: absolute;
+
+  width: 680px;
+  height: 580px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 250, 239, 0.95) 0%,
+      rgba(255, 235, 216, 0.55) 34%,
+      rgba(255, 225, 215, 0.18) 55%,
+      transparent 74%
+    );
+
+  filter:
+    blur(18px);
+
+  animation:
+    warmGlow 7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TRANSITION LIGHT
+========================================================= */
+
+.dollhouse-transition-light {
+  position: absolute;
+
+  width: 220px;
+  height: 700px;
+
+  top: -60px;
+  left: -320px;
+
+  transform:
+    rotate(18deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.42),
+      transparent
+    );
+
+  filter:
+    blur(25px);
+
+  pointer-events: none;
+
+  z-index: 15;
+
+  animation:
+    transitionLight 6.5s
+    ease-in-out infinite;
+}
+
+
+/* =========================================================
+   DOLLHOUSE STAGE
+========================================================= */
+
+.dollhouse-stage {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    transform 0.25s
+    cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    );
+
+  z-index: 8;
+}
+
+
+/* =========================================================
+   INDIVIDUAL HOUSE LAYERS
+========================================================= */
+
+.dollhouse-layer {
+  position: absolute;
+
+  width:
+    min(780px, 105%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  opacity: 0;
+
+  transform:
+    translateY(25px)
+    scale(0.92);
+
+  filter:
+    blur(9px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 1.45s
+    cubic-bezier(
+      0.22,
+      0.61,
+      0.36,
+      1
+    ),
+
+    transform 1.8s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    ),
+
+    filter 1.45s
+    ease;
+}
+
+.dollhouse-layer img {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 28px 38px
+      rgba(76, 53, 46, 0.13)
+    );
+}
+
+
+/* =========================================================
+   ACTIVE HOUSE
+========================================================= */
+
+.dollhouse-layer.is-active {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  filter:
+    blur(0);
+
+  animation:
+    activeHouseFloat
+    6.5s
+    ease-in-out
+    infinite;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   GROUND SHADOW
+========================================================= */
+
+.dollhouse-shadow {
+  position: absolute;
+
+  z-index: 3;
+
+  bottom: 42px;
+
+  width: 68%;
+
+  height: 42px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(93, 66, 55, 0.1);
+
+  filter:
+    blur(19px);
+
+  animation:
+    shadowPulse 6.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   GOLD SPARKLES
+========================================================= */
+
+.premium-sparkle {
+  position: absolute;
+
+  z-index: 20;
+
+  color: #D7A64C;
+
+  font-size: 19px;
+
+  opacity: 0.65;
+
+  pointer-events: none;
+
+  text-shadow:
+    0 0 12px
+    rgba(215, 166, 76, 0.28);
+
+  animation:
+    premiumTwinkle
+    3.5s
+    ease-in-out
+    infinite;
+}
+
+.sparkle-one {
+  top: 16%;
+  left: 17%;
+}
+
+.sparkle-two {
+  top: 29%;
+  right: 8%;
+
+  animation-delay:
+    1.2s;
+}
+
+.sparkle-three {
+  bottom: 21%;
+  left: 23%;
+
+  animation-delay:
+    2s;
+}
+
+
+/* =========================================================
+   AESTHETIC SPARKLES
+========================================================= */
+
+.aesthetic-sparkle {
+  position: absolute;
+
+  z-index: 20;
+
+  width: 8px;
+  height: 8px;
+
+  background:
+    #FFF9EC;
+
+  transform:
+    rotate(45deg);
+
+  border-radius: 2px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 0 10px
+    rgba(255, 246, 218, 0.95),
+
+    0 0 24px
+    rgba(214, 166, 86, 0.25);
+
+  animation:
+    aestheticSparkle
+    4.5s
+    ease-in-out
+    infinite;
+}
+
+.aesthetic-sparkle::before,
+.aesthetic-sparkle::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    #FFF9EC;
+
+  border-radius: 999px;
+}
+
+.aesthetic-sparkle::before {
+  width: 3px;
+  height: 22px;
+}
+
+.aesthetic-sparkle::after {
+  width: 22px;
+  height: 3px;
+}
+
+.aesthetic-one {
+  top: 20%;
+  right: 31%;
+
+  animation-delay:
+    0.3s;
+}
+
+.aesthetic-two {
+  top: 43%;
+  left: 12%;
+
+  transform:
+    rotate(45deg)
+    scale(0.65);
+
+  animation-delay:
+    1.4s;
+}
+
+.aesthetic-three {
+  top: 61%;
+  right: 13%;
+
+  transform:
+    rotate(45deg)
+    scale(0.8);
+
+  animation-delay:
+    2.1s;
+}
+
+.aesthetic-four {
+  bottom: 17%;
+  right: 35%;
+
+  transform:
+    rotate(45deg)
+    scale(0.55);
+
+  animation-delay:
+    2.8s;
+}
+
+.aesthetic-five {
+  top: 12%;
+  left: 34%;
+
+  transform:
+    rotate(45deg)
+    scale(0.45);
+
+  animation-delay:
+    3.4s;
+}
+
+
+/* =========================================================
+   GLITTER
+========================================================= */
+
+.glitter-dot {
+  position: absolute;
+
+  z-index: 19;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background:
+    #FFF8E9;
+
+  box-shadow:
+    0 0 8px
+    rgba(255, 247, 225, 0.95);
+
+  pointer-events: none;
+
+  animation:
+    glitterFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+.glitter-one {
+  top: 18%;
+  left: 46%;
+
+  animation-delay:
+    0.5s;
+}
+
+.glitter-two {
+  top: 35%;
+  right: 25%;
+
+  animation-delay:
+    1.7s;
+}
+
+.glitter-three {
+  top: 53%;
+  left: 18%;
+
+  animation-delay:
+    2.3s;
+}
+
+.glitter-four {
+  bottom: 30%;
+  right: 19%;
+
+  animation-delay:
+    0.9s;
+}
+
+.glitter-five {
+  bottom: 19%;
+  left: 39%;
+
+  animation-delay:
+    3.2s;
+}
+
+.glitter-six {
+  top: 27%;
+  left: 31%;
+
+  animation-delay:
+    4s;
+}
+
+.glitter-seven {
+  top: 69%;
+  right: 34%;
+
+  animation-delay:
+    1.1s;
+}
+
+.glitter-eight {
+  top: 11%;
+  right: 40%;
+
+  animation-delay:
+    2.7s;
+}
+
+
+/* =========================================================
+   HOUSE INDICATORS
+========================================================= */
+
+.house-indicators {
+  position: absolute;
+
+  z-index: 30;
+
+  bottom: 24px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.house-indicators button {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(120, 94, 105, 0.25);
+
+  cursor: pointer;
+
+  transition:
+    width 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.house-indicators button:hover {
+  transform:
+    scale(1.3);
+}
+
+.house-indicators button.active {
+  width: 24px;
+
+  border-radius: 999px;
+
+  background:
+    #D7A64C;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes activeHouseFloat {
+
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -8px;
+  }
+}
+
+
+@keyframes warmGlow {
+
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform:
+      scale(0.96);
+  }
+
+  50% {
+    opacity: 0.92;
+
+    transform:
+      scale(1.04);
+  }
+}
+
+
+@keyframes shadowPulse {
+
+  0%,
+  100% {
+    opacity: 0.48;
+
+    transform:
+      scaleX(0.96);
+  }
+
+  50% {
+    opacity: 0.24;
+
+    transform:
+      scaleX(0.82);
+  }
+}
+
+
+@keyframes transitionLight {
+
+  0% {
+    left: -320px;
+
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 0.7;
+  }
+
+  58% {
+    opacity: 0.7;
+  }
+
+  78% {
+    opacity: 0;
+  }
+
+  100% {
+    left: 900px;
+
+    opacity: 0;
+  }
+}
+
+
+@keyframes backgroundGlowOne {
+
+  0%,
+  100% {
+    opacity: 0.45;
+
+    transform:
+      scale(0.95);
+  }
+
+  50% {
+    opacity: 0.85;
+
+    transform:
+      scale(1.05);
+  }
+}
+
+
+@keyframes backgroundGlowTwo {
+
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+
+@keyframes orbFloat {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(0.9);
+
+    opacity: 0.4;
+  }
+
+  50% {
+    transform:
+      translate(15px, -20px)
+      scale(1.08);
+
+    opacity: 0.75;
+  }
+}
+
+
+@keyframes badgeFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-4px);
+  }
+}
+
+
+@keyframes badgeSparkle {
+
+  0%,
+  100% {
+    opacity: 0.65;
+
+    transform:
+      rotate(0deg)
+      scale(1);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      rotate(12deg)
+      scale(1.15);
+  }
+}
+
+
+@keyframes premiumTwinkle {
+
+  0%,
+  100% {
+    opacity: 0.15;
+
+    transform:
+      scale(0.7)
+      rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.9;
+
+    transform:
+      scale(1.15)
+      rotate(18deg);
+  }
+}
+
+
+@keyframes aestheticSparkle {
+
+  0%,
+  100% {
+    opacity: 0;
+
+    transform:
+      rotate(45deg)
+      scale(0.35);
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.95;
+
+    transform:
+      rotate(45deg)
+      scale(1);
+  }
+
+  75% {
+    opacity: 0.35;
+  }
+}
+
+
+@keyframes glitterFloat {
+
+  0%,
+  100% {
+    opacity: 0.15;
+
+    transform:
+      translateY(5px)
+      scale(0.7);
+  }
+
+  50% {
+    opacity: 0.9;
+
+    transform:
+      translateY(-9px)
+      scale(1.25);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    padding:
+      45px 35px 70px;
+
+    text-align: center;
+  }
+
+  .hero-copy {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding-left: 0;
+  }
+
+  .hero-copy > p {
+    max-width: 550px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-trust {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    height: 510px;
+
+    margin-top: 10px;
+  }
+
+  .dollhouse-layer {
+    width:
+      min(720px, 105%);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .toyland-hero {
+    min-height: auto;
+  }
+
+  .hero-container {
+    padding:
+      35px 18px 55px;
+  }
+
+  .hero-copy h1 {
+    font-size: 46px;
+
+    letter-spacing:
+      -2.5px;
+  }
+
+  .hero-copy > p {
+    font-size: 15px;
+
+    line-height:
+      1.6;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+
+    width: 100%;
+
+    max-width: 310px;
+  }
+
+  .hero-primary-btn,
+  .hero-secondary-btn {
+    width: 100%;
+  }
+
+  .hero-trust {
+    display: none;
+  }
+
+  .hero-visual {
+    height: 390px;
+
+    margin-top: 5px;
+  }
+
+  .dollhouse-layer {
+    width: 130%;
+  }
+
+  .dollhouse-glow {
+    width: 390px;
+    height: 340px;
+  }
+
+  .dollhouse-shadow {
+    bottom: 20px;
+
+    width: 75%;
+  }
+
+  .house-indicators {
+    bottom: 8px;
+  }
+
+  .premium-sparkle {
+    font-size: 15px;
+  }
+
+  .aesthetic-sparkle {
+    transform:
+      rotate(45deg)
+      scale(0.7);
+  }
+
+  .glitter-dot {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .toyland-hero *,
+  .toyland-hero *::before,
+  .toyland-hero *::after {
+
+    animation: none !important;
+
+    transition: none !important;
+  }
+}

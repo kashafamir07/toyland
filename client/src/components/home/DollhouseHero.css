@@ -1,0 +1,893 @@
+.doll-hero {
+  position: relative;
+  min-height: 700px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 20%, #ffe9ef 0, transparent 25%),
+    linear-gradient(135deg, #fff9f2 0%, #fff1f5 52%, #ffe7d5 100%);
+  padding: 48px 50px 25px;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.cloud {
+  position: absolute;
+  width: 170px;
+  height: 55px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.7);
+  filter: blur(1px);
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  bottom: 10px;
+}
+
+.cloud::after {
+  width: 60px;
+  height: 60px;
+  right: 25px;
+  bottom: 8px;
+}
+
+.cloud-1 {
+  top: 110px;
+  left: 42%;
+  animation: cloudMove 8s ease-in-out infinite;
+}
+
+.cloud-2 {
+  top: 230px;
+  right: 4%;
+  transform: scale(.65);
+  animation: cloudMove 10s ease-in-out infinite reverse;
+}
+
+.floating-star {
+  position: absolute;
+  font-size: 30px;
+  color: #ffc94d;
+  animation: floatStar 3s ease-in-out infinite;
+}
+
+.star-1 {
+  left: 45%;
+  top: 170px;
+}
+
+.star-2 {
+  left: 55%;
+  bottom: 180px;
+  animation-delay: 1s;
+}
+
+.floating-heart {
+  position: absolute;
+  left: 40%;
+  bottom: 190px;
+  color: #ff91ad;
+  font-size: 25px;
+  animation: heartFloat 3s ease-in-out infinite;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.hero-inner {
+  position: relative;
+  z-index: 5;
+  max-width: 1500px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  align-items: center;
+  min-height: 570px;
+}
+
+.hero-copy {
+  padding-bottom: 40px;
+}
+
+.arrival-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 8px 25px rgba(100, 50, 80, .08);
+  color: #ff7057;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: .98;
+  letter-spacing: -3px;
+  color: #3e2855;
+  font-weight: 900;
+}
+
+.hero-copy h1 span {
+  color: #ff7259;
+}
+
+.hero-copy p {
+  margin: 28px 0;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #897b91;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.shop-button,
+.category-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 17px;
+  border-radius: 50px;
+  padding: 17px 27px;
+  transition: .3s ease;
+}
+
+.shop-button {
+  color: white;
+  background: #ff7259;
+  box-shadow: 0 12px 25px rgba(255, 114, 89, .25);
+}
+
+.shop-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 17px 30px rgba(255, 114, 89, .35);
+}
+
+.category-button {
+  color: #3e2855;
+  border: 2px solid #eadbe3;
+  background: rgba(255,255,255,.35);
+}
+
+.category-button:hover {
+  background: white;
+  transform: translateY(-4px);
+}
+
+/* =========================
+   DOLLHOUSE
+========================= */
+
+.dollhouse-area {
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.dollhouse {
+  position: relative;
+  width: min(650px, 90%);
+  height: 500px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 25px 25px rgba(90, 50, 70, .18));
+  animation: houseFloat 5s ease-in-out infinite;
+}
+
+/* roof */
+
+.roof {
+  position: absolute;
+  z-index: 5;
+  top: -95px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390px;
+  height: 180px;
+  background: linear-gradient(135deg, #ff7891, #f45b7c);
+  clip-path: polygon(50% 0, 100% 55%, 95% 65%, 5% 65%, 0 55%);
+  border: 10px solid #ffe0bc;
+  filter: drop-shadow(0 8px 4px rgba(90,50,70,.12));
+}
+
+.roof-window {
+  position: absolute;
+  top: 43px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff4e5;
+  border: 7px solid #ff9ab0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b86;
+  font-size: 28px;
+}
+
+/* lights */
+
+.fairy-lights {
+  position: absolute;
+  z-index: 10;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 370px;
+  display: flex;
+  justify-content: space-around;
+  color: #ffd45b;
+  text-shadow: 0 0 10px #ffd45b;
+}
+
+.fairy-lights i {
+  font-size: 13px;
+  animation: lightBlink 1.5s infinite alternate;
+}
+
+.fairy-lights i:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.fairy-lights i:nth-child(3) {
+  animation-delay: .4s;
+}
+
+.fairy-lights i:nth-child(4) {
+  animation-delay: .6s;
+}
+
+.fairy-lights i:nth-child(5) {
+  animation-delay: .8s;
+}
+
+/* floors */
+
+.house-floor {
+  position: relative;
+  height: 190px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff0d2;
+  border: 7px solid #f7d5ac;
+  border-bottom: 10px solid #e7bd91;
+}
+
+.house-floor:first-of-type {
+  margin-top: 0;
+}
+
+.room {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgba(160, 100, 100, .18);
+}
+
+/* bedroom */
+
+.bedroom {
+  background: linear-gradient(145deg, #ffcfe0, #eab7e8);
+}
+
+.bed {
+  position: absolute;
+  width: 115px;
+  height: 65px;
+  left: 38px;
+  bottom: 20px;
+  background: #fff4fb;
+  border: 6px solid #f6a6bf;
+  border-radius: 20px 20px 8px 8px;
+}
+
+.pillow {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  width: 45px;
+  height: 30px;
+  border-radius: 15px;
+  background: #c7a7ed;
+  color: #ffe37b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blanket {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 62px;
+  height: 43px;
+  background: #d8b7ed;
+  border-radius: 20px 0 8px 0;
+}
+
+.teddy {
+  position: absolute;
+  bottom: 70px;
+  left: 145px;
+  font-size: 40px;
+  animation: teddyBounce 2s infinite;
+}
+
+.bedside-table {
+  position: absolute;
+  right: 25px;
+  bottom: 22px;
+}
+
+.lamp {
+  font-size: 27px;
+}
+
+/* play room */
+
+.playroom {
+  background: linear-gradient(145deg, #ffd7df, #ffd9c7);
+}
+
+.room-window {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 62px;
+  height: 65px;
+  border: 6px solid #fff1db;
+  background: #bfe8ff;
+}
+
+.room-window span {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  left: 50%;
+  background: #fff1db;
+}
+
+.room-window span:last-child {
+  width: 100%;
+  height: 3px;
+  left: 0;
+  top: 50%;
+}
+
+.wall-frame {
+  position: absolute;
+  top: 22px;
+  left: 25px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ffba72;
+  color: white;
+}
+
+.bookshelf {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  width: 90px;
+  height: 75px;
+  background: #e99583;
+  border-radius: 7px;
+}
+
+.bookshelf span {
+  display: block;
+  height: 17px;
+  margin: 5px;
+  background: #ffe285;
+  border-radius: 3px;
+}
+
+.tiny-table {
+  position: absolute;
+  bottom: 28px;
+  right: 70px;
+  width: 70px;
+  height: 12px;
+  background: #c98d68;
+}
+
+.bunny {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  font-size: 28px;
+}
+
+.plant {
+  position: absolute;
+  right: 18px;
+  bottom: 15px;
+  font-size: 32px;
+}
+
+/* creative room */
+
+.creative-room {
+  background: linear-gradient(145deg, #bde4f6, #d8c8f1);
+}
+
+.bunting {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  font-size: 18px;
+  color: #ff7c8c;
+  word-spacing: 8px;
+}
+
+.desk {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  width: 125px;
+  height: 12px;
+  background: #c98d68;
+}
+
+.book {
+  position: absolute;
+  bottom: 12px;
+  left: 25px;
+  font-size: 30px;
+}
+
+.chair {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 45px;
+  border-radius: 10px;
+  background: #6db9e8;
+}
+
+.blocks {
+  position: absolute;
+  bottom: 30px;
+  right: 45px;
+  display: flex;
+  gap: 4px;
+}
+
+.blocks b {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffb05e;
+  border-radius: 5px;
+  color: white;
+}
+
+/* living room */
+
+.living-room {
+  background: linear-gradient(145deg, #ffc579, #ffdca4);
+}
+
+.picture {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  padding: 8px 12px;
+  background: #fff0d0;
+  border: 4px solid #ef9e75;
+  border-radius: 6px;
+}
+
+.sofa {
+  position: absolute;
+  left: 35px;
+  bottom: 27px;
+  width: 145px;
+  height: 58px;
+  background: #ef7995;
+  border-radius: 22px 22px 12px 12px;
+}
+
+.sofa::before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 20px;
+  left: -12px;
+  bottom: 42px;
+  border-radius: 20px;
+  background: #f18aa3;
+}
+
+.sofa span {
+  position: absolute;
+  right: 18px;
+  top: 13px;
+  color: #ffd45c;
+  font-size: 22px;
+}
+
+.floor-lamp {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+}
+
+.floor-lamp i {
+  display: block;
+  width: 30px;
+  height: 28px;
+  border-radius: 50% 50% 5px 5px;
+  background: #7abfe8;
+}
+
+.floor-lamp b {
+  display: block;
+  width: 6px;
+  height: 70px;
+  background: #7c6682;
+  margin: auto;
+}
+
+.rug {
+  position: absolute;
+  bottom: 10px;
+  left: 35px;
+  width: 190px;
+  height: 22px;
+  background: #e9a6cf;
+  border-radius: 50%;
+}
+
+/* garden */
+
+.house-garden {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  background: linear-gradient(#aee07a, #d3ec8b);
+  border: 7px solid #f7d5ac;
+}
+
+.path {
+  position: absolute;
+  left: 47%;
+  bottom: -30px;
+  width: 100px;
+  height: 160px;
+  background: #f4d5ae;
+  transform: perspective(100px) rotateX(15deg);
+  border-radius: 50%;
+}
+
+.toy-train {
+  position: absolute;
+  z-index: 3;
+  bottom: 30px;
+  left: 20px;
+  display: flex;
+  gap: 5px;
+  font-size: 38px;
+  animation: trainMove 7s linear infinite;
+}
+
+.flower {
+  position: absolute;
+  z-index: 3;
+  bottom: 17px;
+  font-size: 25px;
+}
+
+.flower-1 { left: 18%; }
+.flower-2 { left: 62%; }
+.flower-3 { left: 75%; }
+
+.bush {
+  position: absolute;
+  bottom: -15px;
+  width: 100px;
+  height: 55px;
+  background: #7fc66c;
+  border-radius: 50%;
+}
+
+.bush-1 { left: -20px; }
+.bush-2 { right: -20px; }
+
+/* =========================
+   EXTRA DECORATIONS
+========================= */
+
+.balloon {
+  position: absolute;
+  right: -5px;
+  top: 25px;
+  z-index: 10;
+  animation: balloonFloat 4s ease-in-out infinite;
+}
+
+.balloon-body {
+  font-size: 75px;
+}
+
+.balloon-string {
+  width: 2px;
+  height: 90px;
+  background: #ad8193;
+  margin: -15px auto 0;
+}
+
+.tree {
+  position: absolute;
+  right: -5px;
+  bottom: 55px;
+  z-index: 1;
+}
+
+.tree-top {
+  font-size: 150px;
+}
+
+.tree-trunk {
+  width: 25px;
+  height: 90px;
+  background: #99674f;
+  margin: -35px auto 0;
+}
+
+.horse {
+  position: absolute;
+  bottom: 25px;
+  right: 50px;
+  font-size: 70px;
+  z-index: 20;
+  animation: horseBounce 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits {
+  position: relative;
+  z-index: 30;
+  max-width: 1150px;
+  margin: -5px auto 0;
+  background: rgba(255, 249, 236, .96);
+  border: 1px solid #f1dfc7;
+  border-radius: 25px;
+  padding: 18px 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  box-shadow: 0 15px 35px rgba(70, 40, 70, .1);
+}
+
+.benefits > div {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 8px;
+  padding: 5px 20px;
+  border-right: 1px solid #eadbd3;
+}
+
+.benefits > div:last-child {
+  border-right: none;
+}
+
+.benefits span {
+  grid-row: 1 / 3;
+  font-size: 30px;
+  align-self: center;
+}
+
+.benefits strong {
+  color: #513862;
+  font-size: 15px;
+}
+
+.benefits small {
+  color: #a08c9b;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes houseFloat {
+  0%,100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(.4deg);
+  }
+}
+
+@keyframes balloonFloat {
+  0%,100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(4deg);
+  }
+}
+
+@keyframes floatStar {
+  0%,100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(20deg);
+  }
+}
+
+@keyframes heartFloat {
+  0%,100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+@keyframes lightBlink {
+  from {
+    opacity: .35;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes teddyBounce {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes horseBounce {
+  0%,100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes trainMove {
+  from {
+    transform: translateX(-20px);
+  }
+
+  to {
+    transform: translateX(180px);
+  }
+}
+
+@keyframes cloudMove {
+  0%,100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(25px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .arrival-badge,
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .dollhouse-area {
+    height: 520px;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits > div:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .doll-hero {
+    padding: 35px 18px;
+  }
+
+  .hero-copy h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .hero-copy p {
+    font-size: 16px;
+  }
+
+  .hero-copy p br {
+    display: none;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .dollhouse {
+    transform: scale(.72);
+    transform-origin: bottom center;
+  }
+
+  .tree,
+  .balloon,
+  .horse {
+    display: none;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits > div {
+    border-right: none;
+    border-bottom: 1px solid #eadbd3;
+    padding: 12px;
+  }
+
+  .benefits > div:last-child {
+    border-bottom: none;
+  }
+}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-cream text-plum font-body antialiased;
+}
+
+/* Hide scrollbar for carousel sections but keep scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.input {
+  @apply w-full rounded-xl border border-plum/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-coral/40;
+}
+html {
+  scroll-behavior: smooth;
+}
